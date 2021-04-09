@@ -1,6 +1,7 @@
 from vector import Vector
 from math import pi
 import pytest
+import math
 
 v10 = Vector(0, 0)
 v3 = Vector(1, 0)
@@ -99,3 +100,7 @@ def test_imul():
     a = Vector(v)
     a *= 2
     assert a == Vector(6, 8)
+
+
+def test_exp():
+    assert Vector(118.73187487146112, 133.57251698701884) == math.exp(v)

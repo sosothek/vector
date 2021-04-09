@@ -67,6 +67,12 @@ class Vector:
     def __imul__(self, other):
         return self * other
 
+    def __truediv__(self, other):
+        return self * (1 / other)
+
+    def __idiv__(self, other):
+        return self * (1 / other)
+
     def __eq__(self, other):
         # noinspection PyTypeChecker
         return round(self.x, Vector.PRECISION) == round(other.x, Vector.PRECISION) and round(
@@ -81,3 +87,19 @@ class Vector:
         return Vector(
             self.x * math.cos(theta) - self.y * math.sin(theta), self.y * math.cos(theta) + self.x * math.sin(theta)
         )
+
+    def exp(self):
+        return Vector(1, 1) * math.cosh(self.norm) + (self / self.norm) * math.sinh(self.norm)
+
+
+builtin_exp = math.exp
+
+
+def newexp(x):
+    if isinstance(x, Vector):
+        return x.exp()
+    else:
+        return builtin_exp(x)
+
+
+math.exp = newexp
