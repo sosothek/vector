@@ -87,3 +87,15 @@ def test_iadd():
     a = Vector(v)
     a += v2
     assert a == Vector(4, 6)
+
+
+def test_isub():
+    a = Vector(v)
+    a -= v2
+    assert a == Vector(2, 2)
+
+
+def test_imul():
+    a = Vector(v)
+    a *= 2
+    assert a == Vector(6, 8)

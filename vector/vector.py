@@ -41,21 +41,13 @@ class Vector:
         return Vector(self.x + other.x, self.y + other.y)
 
     def __iadd__(self, other):
-        v = self + other
-        self.x = v.x
-        self.y = v.y
-        self.norm = v.norm
-        self.arg = v.arg
+        return self + other
 
     def __sub__(self, other):
         return Vector(self.x - other.x, self.y - other.y)
 
     def __isub__(self, other):
-        v = self - other
-        self.x = v.x
-        self.y = v.y
-        self.norm = v.norm
-        self.arg = v.arg
+        return self - other
 
     def __neg__(self):
         return Vector(-self.x, -self.y)
@@ -73,11 +65,7 @@ class Vector:
         return self * other
 
     def __imul__(self, other):
-        v = self * other
-        self.x = v.x
-        self.y = v.y
-        self.r = v.r
-        self.arg = v.arg
+        return self * other
 
     def __eq__(self, other):
         # noinspection PyTypeChecker
