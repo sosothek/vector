@@ -54,6 +54,10 @@ def test_add_and_equal():
     assert v + v2 == Vector(4, 6)
 
 
+def test_neq():
+    assert v != v2
+
+
 def test_sub():
     assert v - v2 == Vector(2, 2)
 

@@ -79,6 +79,9 @@ class Vector:
             self.y, Vector.PRECISION
         ) == round(other.y, Vector.PRECISION)
 
+    def __neq__(self, other):
+        return not self == other
+
     def __str__(self):
         return f"Vector({self.x}, {self.y})"
 
