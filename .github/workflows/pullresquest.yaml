@@ -10,8 +10,6 @@ jobs:
     steps:
       - name: pull
         uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.token }}
       - name: installpython
         uses: actions/setup-python@v2
         with:
